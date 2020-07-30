@@ -16,6 +16,10 @@ public TextView txt1;
     txt1=(TextView) findViewById(R.id.display1);
         txt2=(TextView) findViewById(R.id.display2);
         txt3=(TextView) findViewById(R.id.display3);
-
+           Bundle b=getIntent().getExtras();
+           Mditerm1 m=(Mditerm1) b.getSerializable("details");
+           txt1.setText(m.title);
+           txt2.setText(m.Task_detail);
+           txt3.setText(m.date);
     }
 }

@@ -9,17 +9,19 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class List extends AppCompatActivity {
+public class ShowList extends AppCompatActivity {
 public RecyclerView recycle;
 Mid_term_Adaptor adaptor;
-List<Mditerm1> list = new ArrayList<>();
+DatabaseHelper db;
+ArrayList<Mditerm1> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        db=new DatabaseHelper(this);
         recycle=(RecyclerView) findViewById(R.id.recycle1);
-        Bundle b = getIntent().getExtras();
-        list = b.getSerializable("list")
+        list=new ArrayList<>();
+        list=db.getAll();
         adaptor = new Mid_term_Adaptor(this, list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recycle.setLayoutManager(mLayoutManager);

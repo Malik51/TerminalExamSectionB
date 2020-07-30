@@ -44,7 +44,6 @@ android:text="Submit"
         app:layout_constraintTop_toBottomOf="@+id/btn1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf=""
         android:text="Next"
         android:id="@+id/btn2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

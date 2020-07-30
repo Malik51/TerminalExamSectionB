@@ -49,7 +49,7 @@ public class Mid_term_Adaptor extends RecyclerView.Adapter<Mid_term_Adaptor.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Mditerm1 t1 = notesList.get(position);
+        final Mditerm1 t1 = notesList.get(position);
 
         holder.detail.setText(t1.title);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +57,7 @@ public class Mid_term_Adaptor extends RecyclerView.Adapter<Mid_term_Adaptor.MyVi
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("details",(Serializable)t1);
-                Intent intent = new Intent(context,List.class);
+                Intent intent = new Intent(context,DisplayData.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }
